@@ -1,8 +1,5 @@
-# roles/Haevas.arch-yaourt/defaults/main.yml
 ---
 
 ansible_python_interpreter: /usr/bin/python2
 
 yaourt_enabled: yes                                # The role is enabled
-
-yaourt_confdir: /etc/openvpn
