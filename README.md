@@ -21,7 +21,7 @@ yaourt_enabled: yes                       # The role in enabled
 
 Add `Haevas.arch-yaourt` to your roles and enable it.
 
-```
+```yaml
 - hosts: all
 
   roles:
