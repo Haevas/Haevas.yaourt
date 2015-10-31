@@ -1,0 +1,7 @@
+# roles/Haevas.arch-yaourt/handlers/main.yml
+---
+
+#- name: restart Haevas.arch-yaourt
+#  service:
+#    name: Haevas.arch-yaourtd
+#    state: restarted

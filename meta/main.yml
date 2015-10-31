@@ -1,0 +1,15 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: vonpupp
+  description: PURPOSE
+  company:
+  license: BSD
+  platforms:
+  - name: arch
+    versions:
+      - all
+  categories:
+    - system
+    - development

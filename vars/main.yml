@@ -1,0 +1,9 @@
+# roles/Haevas.arch-yaourt/vars/main.yml
+---
+
+ansible_python_interpreter: /usr/bin/python2
+
+Haevas.arch-yaourt_packages:
+  - Haevas.arch-yaourt
+
+Haevas.arch-yaourt_service: Haevas.arch-yaourtd

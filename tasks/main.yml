@@ -1,0 +1,4 @@
+---
+
+- include: yaourt.yml
+  when: yaourt_enabled

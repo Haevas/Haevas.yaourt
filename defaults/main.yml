@@ -1,0 +1,6 @@
+# roles/Haevas.arch-yaourt/defaults/main.yml
+---
+
+yaourt_enabled: yes                                # The role is enabled
+
+yaourt_confdir: /etc/openvpn
