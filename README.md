@@ -13,8 +13,11 @@ None
 #### Role Variables
 
 ```yaml
-yaourt_enabled: yes                       # The role in enabled
+yaourt_enabled: yes                                 # The role in enabled
+yaourt_sync_deps: yes                               # Sync db and base-devel
 ```
+
+See [this file](defaults/main.yml) for a full list and their default values.
 
 #### Usage
 
@@ -28,6 +31,7 @@ Add `Haevas.yaourt` to your roles and enable it.
 
   vars:
   - yaourt_enabled: yes
+  - yaourt_sync_deps: yes
 ```
 
 #### Contributing
