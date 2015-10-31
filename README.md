@@ -1,8 +1,8 @@
-Haevas.arch-yaourt
+Haevas.yaourt
 ===
 
-[![Build Status](http://img.shields.io/travis/Haevas/Haevas.arch-yaourt.svg?style=flat-square)](https://travis-ci.org/Haevas/Haevas.arch-yaourt)
-[![Galaxy](http://img.shields.io/badge/galaxy/Haevas.arch-yaourt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/5792)
+[![Build Status](http://img.shields.io/travis/Haevas/Haevas.yaourt.svg?style=flat-square)](https://travis-ci.org/Haevas/Haevas.yaourt)
+[![Galaxy](http://img.shields.io/badge/galaxy/Haevas.yaourt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/5792)
 
 An Ansible role for installing `yaourt` on Arch Linux based systems.
 *
@@ -19,13 +19,13 @@ yaourt_enabled: yes                       # The role in enabled
 
 #### Usage
 
-Add `Haevas.arch-yaourt` to your roles and enable it.
+Add `Haevas.yaourt` to your roles and enable it.
 
 ```yaml
 - hosts: all
 
   roles:
-  - Haevas.arch-yaourt
+  - Haevas.yaourt
 
   vars:
   - yaourt_enabled: yes
@@ -33,7 +33,7 @@ Add `Haevas.arch-yaourt` to your roles and enable it.
 
 #### Contributing
 
-Issues, feature requests, ideas are [appreciated](https://github.com/Haevas/Haevas.arch-yaourt/issues). Pull requests are also very welcome. Preferably, create a topic branch and when submitting, squash your commits into one (with a descriptive message).
+Issues, feature requests, ideas are [appreciated](https://github.com/Haevas/Haevas.yaourt/issues). Pull requests are also very welcome. Preferably, create a topic branch and when submitting, squash your commits into one (with a descriptive message).
 
 #### License
 
