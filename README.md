@@ -31,8 +31,6 @@ Add `Haevas.arch-yaourt` to your roles and enable it.
   - yaourt_enabled: yes
 ```
 
-See the [test playbook](test.yml) for an example.
-
 #### Contributing
 
 Issues, feature requests, ideas are [appreciated](https://github.com/vonpupp/Haevas.arch-yaourt/issues). Pull requests are also very welcome. Preferably, create a topic branch and when submitting, squash your commits into one (with a descriptive message).
