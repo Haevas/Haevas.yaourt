@@ -23,10 +23,10 @@ arch:
     - echo localhost > inventory
 
     # Check syntax
-    - ansible-playbook --syntax-check -i inventory tests/test.yml
+    - ansible-playbook --syntax-check -i inventory test.yml
 
     # First run
-    - ansible-playbook -i inventory tests/test.yml --connection=local --sudo -vvv
+    - ansible-playbook -i inventory test.yml --connection=local --sudo -vvv
 
     # Second run Idempotence test
     - >
