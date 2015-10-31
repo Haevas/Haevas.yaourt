@@ -2,4 +2,5 @@
 
 ansible_python_interpreter: /usr/bin/python2
 
-yaourt_enabled: yes                                # The role is enabled
+yaourt_enabled: yes                                 # The role is enabled
+yaourt_sync_deps: yes                               # Sync db and base-devel

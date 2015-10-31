@@ -10,10 +10,12 @@
 - name: Update packages database
   sudo: yes
   pacman: update_cache=yes
+  when: yaourt_sync_deps
 
 - name: Install base-devel dependency
   sudo: yes
   pacman: name=base-devel state=present
+  when: yaourt_sync_deps
 
 - name: Install package-query dependency (yajl)
   sudo: yes
