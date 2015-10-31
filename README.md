@@ -4,7 +4,7 @@ Haevas.arch-yaourt
 [![Build Status](http://img.shields.io/travis/vonpupp/Haevas.arch-yaourt.svg?style=flat-square)](https://travis-ci.org/vonpupp/Haevas.arch-yaourt)
 [![Galaxy](http://img.shields.io/badge/galaxy-Haevas.arch-yaourt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/ZZZ)
 
-An Ansible role for PURPOSE. Specifically, the responsibilities of this role are to:
+An Ansible role for installing `yaourt`. Specifically, the responsibilities of this role are to:
 *
 
 #### Requirements & dependencies
