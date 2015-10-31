@@ -2,7 +2,7 @@ Haevas.arch-yaourt
 ===
 
 [![Build Status](http://img.shields.io/travis/Haevas/Haevas.arch-yaourt.svg?style=flat-square)](https://travis-ci.org/Haevas/Haevas.arch-yaourt)
-[![Galaxy](http://img.shields.io/badge/galaxy-Haevas.arch-yaourt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/5792)
+[![Galaxy](http://img.shields.io/badge/galaxy/Haevas.arch-yaourt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/5792)
 
 An Ansible role for installing `yaourt` on Arch Linux based systems.
 *
