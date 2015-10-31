@@ -1,0 +1,43 @@
+sudo: required
+
+# env:
+#   - ARCH_TRAVIS_VERBOSE=1
+
+arch:
+  repos:
+    - xyne-any=http://xyne.archlinux.ca/repos/xyne
+    - papyros=http://dash.papyros.io/repos/$repo/$arch
+  packages:
+    - base
+    - reflector
+    # aur
+    - archey3-git
+    # papyros
+    - papyros-shell
+    - python2-pip
+    - ansible
+  script:
+    - "sudo archey3"
+    - "reflector --verbose -l 20 --sort rate -p http"
+
+    - echo localhost > inventory
+
+    # Check syntax
+    - ansible-playbook --syntax-check -i inventory test.yml
+
+    # First run
+    - ansible-playbook -i inventory test.yml --connection=local --sudo -v
+
+    # Second run Idempotence test
+    - >
+        ansible-playbook -i inventory test.yml --connection=local --sudo
+        | grep -q 'failed=0'
+        && (echo 'Idempotence test: pass' && exit 0)
+        || (echo 'Idempotence test: fail' && exit 1)
+
+    # Further checks:
+    - yaourt --help || exit 1
+
+script:
+  - "bash .travis/arch-travis.sh"
+

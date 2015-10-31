@@ -1,0 +1,14 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: vonpupp
+  description: Install yaourt on Arch Linux based systems
+  company:
+  license: BSD
+  platforms:
+  - name: arch
+    versions:
+      - all
+  categories:
+    - system

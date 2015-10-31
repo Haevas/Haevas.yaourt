@@ -1,0 +1,6 @@
+---
+
+#- name: restart Haevas.arch-yaourt
+#  service:
+#    name: Haevas.arch-yaourtd
+#    state: restarted
