@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: vonpupp
-  description: PURPOSE
+  description: Install yaourt on Arch Linux based systems
   company:
   license: BSD
   platforms:
@@ -12,4 +12,3 @@ galaxy_info:
       - all
   categories:
     - system
-    - development
