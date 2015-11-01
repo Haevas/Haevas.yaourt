@@ -5,7 +5,7 @@
 
 - name: Copy aur script
   sudo: yes
-  copy: src=files/usr/local/bin/aur dest=/usr/local/bin/aur mode=755
+  copy: src=usr/local/bin/aur dest=/usr/local/bin/aur mode=755
 
 - name: Update packages database
   sudo: yes
