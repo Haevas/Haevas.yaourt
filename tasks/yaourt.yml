@@ -1,11 +1,11 @@
 ---
-#- name: Create local user for makepkg
-#  sudo: yes
-#  user: name=makepkg shell=/bin/sh
+- name: Create local packages install user
+  sudo: yes
+  user: name={{ yaourt_makepkg_user }} shell=/bin/sh
 
 - name: Copy aur script
   sudo: yes
-  copy: src=usr/local/bin/aur dest=/usr/local/bin/aur mode=755
+  template: src=usr/local/bin/aur.j2 dest=/usr/local/bin/aur mode=755
 
 - name: Update packages database
   sudo: yes

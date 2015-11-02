@@ -11,7 +11,7 @@ git clone http://aur.archlinux.org/"$pkg".git
 cd "$pkg"
 
 chown -R nobody "$temp"
-sudo -u nobody makepkg
+sudo -u nobody {{ yaourt_makepkg_user }}
 pacman --noconfirm -U *.pkg.tar.xz
 
 cd /
