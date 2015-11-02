@@ -1,8 +1,13 @@
 ---
 - hosts: all
+  roles:
+    - { role: Stouts.sudo }
+
   tasks:
   - include: tasks/main.yml
+
   handlers:
   - include: handlers/main.yml
+
   vars_files:
   - defaults/main.yml

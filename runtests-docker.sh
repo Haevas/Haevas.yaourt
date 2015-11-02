@@ -11,6 +11,7 @@ assert () {
 }
 
 {
+    assert "ansible-galaxy install --force -r requirements.yml"                   &&
     assert "ansible-playbook -i local, -c local --syntax-check test.yml"          &&
     assert "ansible-playbook -i local, -c local test.yml"                         &&
     assert "ansible-playbook -i local, -c local test.yml" | grep failed=0

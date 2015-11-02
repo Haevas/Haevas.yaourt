@@ -10,4 +10,5 @@
 *.box
 
 # Ignore role dependencies (installed from Ansible Galaxy)
+roles/
 tests/roles/*.*

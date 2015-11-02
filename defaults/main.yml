@@ -5,3 +5,6 @@ ansible_python_interpreter: /usr/bin/python2
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
 yaourt_makepkg_user: makepkg                        # Sync db and base-devel
+
+sudo_users: [makepkg]
+sudo_passwordless: [makepkg]
