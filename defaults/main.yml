@@ -6,5 +6,9 @@ yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
 yaourt_makepkg_user: makepkg                        # Sync db and base-devel
 
-sudo_users: [makepkg travis]
-sudo_passwordless: [makepkg travis]
+sudo_users:
+  - makepkg
+  - travis
+sudo_passwordless:
+  - makepkg
+  - travis
