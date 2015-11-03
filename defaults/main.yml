@@ -1,14 +1,26 @@
 ---
 
 ansible_python_interpreter: /usr/bin/python2
+is_travis: {{ lookup('env', 'TRAVIS') }}
 
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
 yaourt_makepkg_user: makepkg                        # Sync db and base-devel
 
+sudo_users_travis:
+  - travis
+  when: is_travis
+
+sudo_passwordless_travis:
+  - travis
+  when: is_travis
+
 sudo_users:
   - makepkg
-  - travis
+
 sudo_passwordless:
   - makepkg
-  - travis
+
+sudo_users: "{{ sudo_users + sudo_users_travis }}"
+
+sudo_passwordless: "{{ sudo_passwrodless + sudo_passwordless_travis }}"
