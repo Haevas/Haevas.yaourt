@@ -19,6 +19,7 @@ arch:
   script:
     - "sudo archey3"
     - "reflector --verbose -l 20 --sort rate -p http"
+    - "cat /etc/sudoers"
 
     - echo localhost > inventory
     - ansible-galaxy install --force -r requirements.yml
