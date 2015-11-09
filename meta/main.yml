@@ -1,6 +1,6 @@
 ---
 dependencies:
-  - Stouts.sudo
+  - knopki.sudoers
 
 galaxy_info:
   author: vonpupp
