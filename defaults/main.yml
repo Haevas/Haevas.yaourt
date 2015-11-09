@@ -10,9 +10,9 @@ yaourt_makepkg_user: makepkg                        # The user to build the pack
 # Currently Ansible does not support passing list within dicts as arguments
 # therefore this hack is needed
 _sudoers_yaourt_makepkg_user:
-    - name: "{{ yaourt_makepkg_user }}"
+  - name: "{{ yaourt_makepkg_user }}"
     users: ["ALL"]
 
 _sudoers_yaourt_travis_user:
-    - name: "travis"
+  - name: "travis"
     users: ["ALL"]
