@@ -1,13 +1,39 @@
 ---
 - hosts: all
-  roles:
-    - { role: Stouts.sudo }
+
+  vars:
+    # Currently Ansible does not support passing list within dicts as arguments
+    # therefore this hack is needed
+    sudoers_yaourt_makepkg_user:
+      - name: "{{ yaourt_makepkg_user }}"
+        users: ["ALL"]
+
+    sudoers_yaourt_travis_user:
+      - name: "travis"
+        users: ["ALL"]
 
   tasks:
-  - include: tasks/main.yml
+    - debug: var=is_travis
+
+  roles:
+    - { role: knopki.sudoers,
+        sudoers_filename: "{{ yaourt_makepkg_user }}",
+        sudoers_nopasswd: true,
+        sudoers: "{{ sudoers_yaourt_makepkg_user }}"
+      }
+
+    - { role: knopki.sudoers,
+        sudoers_filename: "travis",
+        sudoers_nopasswd: true,
+        sudoers: "{{ sudoers_yaourt_travis_user }}",
+        when: is_travis
+      }
+
+  tasks:
+    - include: tasks/main.yml
 
   handlers:
-  - include: handlers/main.yml
+    - include: handlers/main.yml
 
   vars_files:
-  - defaults/main.yml
+    - defaults/main.yml

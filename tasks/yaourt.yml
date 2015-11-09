@@ -17,6 +17,11 @@
   pacman: name=base-devel state=present
   when: yaourt_sync_deps
 
+- name: Install sudo
+  sudo: yes
+  pacman: name=sudo state=present
+  when: yaourt_sync_deps
+
 - name: Install package-query dependency (yajl)
   sudo: yes
   pacman: name=yajl state=present
