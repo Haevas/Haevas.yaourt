@@ -1,2 +1,11 @@
-- src: https://github.com/Stouts/Stouts.sudo
+#- src: https://github.com/Stouts/Stouts.sudo
+#  path: roles/
+
+#- src: tersmitten.sudoers
+#  path: roles/
+
+#- src: https://github.com/knopki/ansible-sudoers.git
+#  path: roles/
+
+- src: knopki.sudoers
   path: roles/
