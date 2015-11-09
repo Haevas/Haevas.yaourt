@@ -16,9 +16,6 @@
     - debug: var=is_travis
 
   roles:
-      #- { role: Stouts.sudo }
-    #- { role: tersmitten.sudoers }
-#    - { role: knopki.sudoers }
     - { role: knopki.sudoers,
         sudoers_filename: "{{ yaourt_makepkg_user }}",
         sudoers_nopasswd: true,
@@ -31,18 +28,6 @@
         sudoers: "{{ sudoers_yaourt_travis_user }}",
         when: is_travis
       }
-
-#       sudoers_filename: "{{ yaourt_makepkg_user }}",
-#       sudoers_nopasswd: true,
-#       sudoers: [name: "{{ yaourt_makepkg_user }}", users: "ALL"]
-#, users: ["ALL"]]
-
-#  vars:
-#    sudoers_filename: "{{ yaourt_makepkg_user }}"
-#    sudoers_nopasswd: true
-#    sudoers:
-#      - name: "{{ yaourt_makepkg_user }}"
-#        users: ["ALL"]
 
   tasks:
     - include: tasks/main.yml
