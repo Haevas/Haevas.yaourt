@@ -1,37 +1,34 @@
 ---
 - name: Create local packages install user
-  sudo: yes
   user: name={{ yaourt_makepkg_user }} shell=/bin/sh
 
 - name: Copy aur script
-  sudo: yes
   template: src=usr/local/bin/aur.j2 dest=/usr/local/bin/aur mode=755
 
 - name: Update packages database
-  sudo: yes
   pacman: update_cache=yes
   when: yaourt_sync_deps
 
 - name: Install base-devel dependency
-  sudo: yes
   pacman: name=base-devel state=present
   when: yaourt_sync_deps
 
 - name: Install sudo
-  sudo: yes
   pacman: name=sudo state=present
   when: yaourt_sync_deps
 
 - name: Install package-query dependency (yajl)
-  sudo: yes
-  pacman: name=yajl state=present
+  pacman:
+    name: "{{item }}"
+    state: present
+  with_items:
+    - git
+    - yajl
 
 - name: Install yaourt dependency (package-query)
-  sudo: yes
-  command: aur package-query
+  command: /usr/local/bin/aur package-query
   #when: "'package-query' not in installed_packages.stdout_lines"
 
 - name: Install yaourt
-  sudo: yes
-  command: aur yaourt
+  command: /usr/local/bin/aur yaourt
   #when: "'yaourt' not in installed_packages.stdout_lines"
