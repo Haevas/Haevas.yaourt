@@ -22,6 +22,9 @@ arch:
     - python2-pip
   script:
     #- "sudo archey3"
+    - rm /dev/shm
+    - mkdir /dev/shm
+    - chmod 777 /dev/shm
     - sudo pip2 install ansible
     - "reflector --verbose -l 20 --sort rate -p http"
 
