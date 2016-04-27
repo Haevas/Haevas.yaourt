@@ -1,5 +1,10 @@
 sudo: required
 
+matrix:
+  include:
+    - os: linux
+      dist: jessie
+
 # env:
 #   - ARCH_TRAVIS_VERBOSE=1
 
