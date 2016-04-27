@@ -26,7 +26,7 @@ arch:
     - "reflector --verbose -l 20 --sort rate -p http"
 
     - echo localhost > inventory
-    - ansible-galaxy install --force -r requirements.yml -p roles
+    - sudo ansible-galaxy install --force -r requirements.yml -p roles
 
     # Check syntax
     - ansible-playbook --syntax-check -i inventory test.yml
