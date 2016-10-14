@@ -1,5 +1,8 @@
 # .gitignore
 
+# Submdule
+.travis
+
 # Hidden Vagrant-directory
 .vagrant
 
