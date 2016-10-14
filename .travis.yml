@@ -11,14 +11,14 @@ sudo: required
 arch:
   repos:
     - xyne-any=http://xyne.archlinux.ca/repos/xyne
-    - papyros=http://dash.papyros.io/repos/$repo/$arch
+#    - papyros=http://dash.papyros.io/repos/$repo/$arch
   packages:
     - base
     - reflector
     # aur
     #- archey3-git
     # papyros
-    - papyros-shell
+    #- papyros-shell
     - python2-pip
   script:
     #- "sudo archey3"
