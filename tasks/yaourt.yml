@@ -5,7 +5,7 @@
     - "../vars/{{ ansible_distribution }}.yml"
     - "../vars/{{ ansible_os_family }}.yml"
     - "../vars/{{ travis_env }}.yml"
-    - "../vars/main.yml"
+    - "../vars/default.yml"
   when: yaourt_makepkg_user is not defined
 
 - name: Create local packages install user

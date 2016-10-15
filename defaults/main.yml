@@ -7,3 +7,7 @@ travis_env: "{{ lookup('env', 'TRAVIS')|ternary('travis', 'notravis')}}"
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
 yaourt_makepkg_user: makepkg                        # The user to build the packages
+
+_sudoers_yaourt_makepkg_user:
+  - name: "{{ yaourt_makepkg_user }}"
+    users: ["ALL"]

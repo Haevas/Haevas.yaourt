@@ -1,4 +1,9 @@
 ---
+_sudoers_yaourt_makepkg_user:
+  - name: "{{ yaourt_makepkg_user }}"
+    users: ["ALL"]
+
+default_test_var: "default_test variable is defined"
 
 
 # Currently Ansible does not support passing list within dicts as arguments
@@ -8,6 +13,3 @@
 #  - name: "travis"
 #    users: ["ALL"]
 
-_sudoers_yaourt_makepkg_user:
-  - name: "{{ yaourt_makepkg_user }}"
-    users: ["ALL"]
