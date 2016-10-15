@@ -1,11 +1,11 @@
 ---
 #- include_vars: "{{ item }}"
 #  with_first_found:
-#    - "../vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version | int}}.yml"
-#    - "../vars/{{ ansible_distribution }}.yml"
-#    - "../vars/{{ ansible_os_family }}.yml"
-#    - "../vars/{{ travis_env }}.yml"
-#    - "../vars/default.yml"
+#    - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version | int}}.yml"
+#    - "vars/{{ ansible_distribution }}.yml"
+#    - "vars/{{ ansible_os_family }}.yml"
+#    - "vars/{{ travis_env }}.yml"
+#    - "vars/default.yml"
 #  when: yaourt_makepkg_user is not defined
 
 - name: Create local packages install user
