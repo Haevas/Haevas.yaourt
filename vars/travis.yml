@@ -1,0 +1,5 @@
+---
+yaourt_makepkg_user: travis
+_sudoers_yaourt_makepkg_user:
+  - name: "{{ yaourt_makepkg_user }}"
+    users: ["ALL"]

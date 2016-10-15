@@ -1,1 +1,13 @@
 ---
+
+
+# Currently Ansible does not support passing list within dicts as arguments
+# therefore this hack is needed
+
+#_sudoers_yaourt_travis_user:
+#  - name: "travis"
+#    users: ["ALL"]
+
+_sudoers_yaourt_makepkg_user:
+  - name: "{{ yaourt_makepkg_user }}"
+    users: ["ALL"]
