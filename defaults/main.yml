@@ -1,8 +1,8 @@
 ---
 ansible_python_interpreter: /usr/bin/python2
 
-is_travis: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
-travis_env: "{{ lookup('env', 'TRAVIS')|ternary('travis', 'notravis') }}"
+#is_travis: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
+#travis_env: "{{ lookup('env', 'TRAVIS')|ternary('travis', 'notravis') }}"
 #travis_env: "travis"
 
 yaourt_enabled: yes                                 # The role is enabled
