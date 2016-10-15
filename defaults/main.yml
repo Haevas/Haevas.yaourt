@@ -2,7 +2,7 @@
 ansible_python_interpreter: /usr/bin/python2
 
 is_travis: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
-travis_env: "{{ lookup('env', 'TRAVIS') | lower }}"
+travis_env: "{{ lookup('env', 'TRAVIS')|ternary('travis', 'notravis')}}"
 
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
