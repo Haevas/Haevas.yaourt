@@ -5,10 +5,10 @@
 
   pre_tasks:
     - include: tasks/distro_include.yml
-    - name: Print
-      debug: "msg={{ travis_env }}"
-    - name: Print2
-      debug: "msg={{ ansible_distribution }}"
+      #    - name: Print
+      #      debug: "msg={{ travis_env }}"
+      #    - name: Print2
+      #      debug: "msg={{ ansible_distribution }}"
 
   vars_files:
     - defaults/main.yml
