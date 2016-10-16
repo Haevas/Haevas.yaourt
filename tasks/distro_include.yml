@@ -9,4 +9,4 @@
   when: yaourt_makepkg_user is not defined
 
 - include_vars: "vars/travis.yml"
-  when: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
+  when: is_travis
