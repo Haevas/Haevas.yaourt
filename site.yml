@@ -5,16 +5,6 @@
 
   pre_tasks:
     - include: tasks/distro_include.yml
-    - name: Print1
-      debug: "msg={{ lookup('env', 'TRAVIS') }}"
-    - name: Print2
-      debug: "msg={{ lookup('env', 'TRAVIS')|default(false, true) }}"
-    - name: Print3
-      debug: "msg={{ lookup('env', 'TRAVIS')|default(true, false) }}"
-      #    - name: is_travis
-      #      debug: "msg={{ is_travis }}"
-      #    - name: is_travis2
-      #      debug: "msg={{ is_travis2 }}"
 
   vars_files:
     - defaults/main.yml

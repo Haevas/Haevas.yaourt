@@ -1,31 +1,14 @@
 ---
 - name: Set travis_env
   set_fact:
-    travis_env: "{{ lookup('env','TRAVIS') }}"
-
-- name: Set travis_env_bool
-  set_fact:
-    travis_env_bool: "{{ lookup('env','TRAVIS')|default(false, true) }}"
-
-- name: Set travis_home
-  set_fact:
-    travis_home: "{{ lookup('env','HOME') }}"
-
-- name: travis_env
-  debug: "msg={{ travis_env }}"
-
-- name: travis_env_bool
-  debug: "msg={{ travis_env_bool }}"
-
-- name: travis_home
-  debug: "msg={{ travis_home }}"
+    travis_env: "{{ lookup('env','TRAVIS')|default(false, true) }}"
 
 - include_vars: "{{ item }}"
   with_first_found:
     - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version | int}}.yml"
     - "vars/{{ ansible_distribution }}.yml"
     - "vars/{{ ansible_os_family }}.yml"
-      #    - "vars/{{ travis_env }}.yml"
+    #- "vars/{{ travis_env }}.yml"
     - "vars/default.yml"
   when: yaourt_makepkg_user is not defined
 

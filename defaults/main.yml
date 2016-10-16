@@ -1,14 +1,5 @@
 ---
 ansible_python_interpreter: /usr/bin/python2
 
-#is_travis: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
-#travis_env: "{{ lookup('env', 'TRAVIS')|ternary('travis', 'notravis') }}"
-#travis_env: "travis"
-
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
-#yaourt_makepkg_user: makepkg                        # The user to build the packages
-
-
-#is_travis: "{{ lookup('env', 'TRAVIS') | default(false, true) }}"
-#is_travis2: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"

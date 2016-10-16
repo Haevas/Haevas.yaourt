@@ -28,9 +28,6 @@ arch:
     - sudo pip2 install ansible
     - "reflector --verbose -l 20 --sort rate -p http"
 
-    - ls -la /etc/sudoers*
-    - echo "TRAVIS=$TRAVIS"
-
     - echo localhost > inventory
     - sudo ansible-galaxy install --force -r requirements.yml -p roles
 
@@ -51,5 +48,5 @@ arch:
     - yaourt --help || exit 1
 
 script:
-  - "bash .travis/arch-travis.sh"
+  - "bash .arch-travis/arch-travis.sh"
 

@@ -1,5 +1,4 @@
 ---
-
 - include: yaourt.yml
   become: yes
   when: yaourt_enabled
