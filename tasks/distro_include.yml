@@ -1,4 +1,8 @@
 ---
+  vars:
+    travis_env: "{{ lookup('env','TRAVIS') }}"
+    travis_home: "{{ lookup('env','HOME') }}"
+
 - include_vars: "{{ item }}"
   with_first_found:
     - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version | int}}.yml"
@@ -9,4 +13,9 @@
   when: yaourt_makepkg_user is not defined
 
 - include_vars: "vars/travis.yml"
-  when: is_travis
+  when: travis_env
+
+- name: travis_env
+  debug: "msg={{ travis_env }}"
+- name: travis_home
+  debug: "msg={{ travis_home }}"
