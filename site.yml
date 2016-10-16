@@ -5,11 +5,9 @@
 
   pre_tasks:
     - include: tasks/distro_include.yml
-    - name: Print
-      debug: "msg={{ travis_env }}"
-    - name: Print2
+    - name: Print1
       debug: "msg={{ lookup('env', 'TRAVIS') }}"
-    - name: Print3
+    - name: Print2
       debug: "msg={{ lookup('env', 'TRAVIS')|default(false, true) }}"
 
   vars_files:
