@@ -1,4 +1,7 @@
 ---
+- name: Including yaml config files based on the distribution
+  include: distro_include.yml
+
 - name: Create local packages install user
   user: name={{ yaourt_makepkg_user }} shell=/bin/sh
 

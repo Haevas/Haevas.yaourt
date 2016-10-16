@@ -1,0 +1,11 @@
+#!/usr/bin/env ansible-playbook
+
+---
+- hosts: all
+  #  sudo: True
+
+  vars:
+    sudoers_filename: "testing"
+
+  roles:
+    - .

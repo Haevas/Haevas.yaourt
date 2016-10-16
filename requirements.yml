@@ -1,2 +1,2 @@
 - src: knopki.sudoers
-  path: roles/
+  path: ../roles/
