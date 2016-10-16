@@ -38,11 +38,11 @@ arch:
     - sudo ansible-playbook --syntax-check -i inventory test.yml
 
     # First run
-    - sudo ansible-playbook -i inventory test.yml --connection=local --sudo -v
+    - sudo ansible-playbook -e ansible_python_interpreter=/usr/sbin/python2 -i inventory test.yml --connection=local --sudo -v
 
     # Second run Idempotence test
     - >
-        sudo ansible-playbook -i inventory test.yml --connection=local --sudo
+        sudo ansible-playbook -e ansible_python_interpreter=/usr/sbin/python2 -i inventory test.yml --connection=local --sudo
         | grep -q 'failed=0'
         && (echo 'Idempotence test: pass' && exit 0)
         || (echo 'Idempotence test: fail' && exit 1)
