@@ -11,3 +11,4 @@ yaourt_sync_deps: no                                # Sync db and base-devel
 
 
 is_travis: "{{ lookup('env', 'TRAVIS') | default(false, true) }}"
+is_travis2: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
