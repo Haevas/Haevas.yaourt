@@ -1,7 +1,17 @@
 ---
-  vars:
+- name: Set travis_env
+  set_fact:
     travis_env: "{{ lookup('env','TRAVIS') }}"
+
+- name: Set travis_home
+  set_fact:
     travis_home: "{{ lookup('env','HOME') }}"
+
+- name: travis_env
+  debug: "msg={{ travis_env }}"
+
+- name: travis_home
+  debug: "msg={{ travis_home }}"
 
 - include_vars: "{{ item }}"
   with_first_found:
@@ -15,7 +25,3 @@
 - include_vars: "vars/travis.yml"
   when: travis_env
 
-- name: travis_env
-  debug: "msg={{ travis_env }}"
-- name: travis_home
-  debug: "msg={{ travis_home }}"
