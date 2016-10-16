@@ -31,8 +31,9 @@ arch:
     - which python2
 
     - echo localhost > inventory
-    - sudo ansible-galaxy install --force -r requirements.yml -p roles
-    - sudo ansible-galaxy install --force -r requirements.yml -p ../roles
+    - sudo ansible-galaxy install --force -r requirements.yml
+      #- sudo ansible-galaxy install --force -r requirements.yml -p roles
+      #- sudo ansible-galaxy install --force -r requirements.yml -p ../roles
 
     # Check syntax
     - sudo ansible-playbook --syntax-check -i inventory test.yml
