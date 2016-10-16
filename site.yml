@@ -9,6 +9,8 @@
       debug: "msg={{ lookup('env', 'TRAVIS') }}"
     - name: Print2
       debug: "msg={{ lookup('env', 'TRAVIS')|default(false, true) }}"
+    - name: is_travis
+      debug: "msg={{ is_travis }}"
 
   vars_files:
     - defaults/main.yml

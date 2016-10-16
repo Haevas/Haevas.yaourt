@@ -8,3 +8,6 @@ ansible_python_interpreter: /usr/bin/python2
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
 #yaourt_makepkg_user: makepkg                        # The user to build the packages
+
+
+is_travis: "{{ lookup('env', 'TRAVIS') | default(false, true) }}"
