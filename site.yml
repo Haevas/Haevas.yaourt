@@ -1,17 +1,19 @@
+#!/usr/bin/env ansible-playbook
+
 ---
 - hosts: all
+
+  pre_tasks:
+    - include: tasks/distro_include.yml
+
+  vars_files:
+    - defaults/main.yml
+
   roles:
     - { role: knopki.sudoers,
         sudoers_filename: "{{ yaourt_makepkg_user }}",
         sudoers_nopasswd: true,
         sudoers: "{{ _sudoers_yaourt_makepkg_user }}"
-      }
-
-    - { role: knopki.sudoers,
-        sudoers_filename: "travis",
-        sudoers_nopasswd: true,
-        sudoers: "{{ _sudoers_yaourt_travis_user }}",
-        when: is_travis
       }
 
   tasks:
@@ -20,5 +22,3 @@
   handlers:
     - include: handlers/main.yml
 
-  vars_files:
-    - defaults/main.yml

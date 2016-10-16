@@ -1,18 +1,5 @@
 ---
 ansible_python_interpreter: /usr/bin/python2
-is_travis: "{{ lookup('env', 'TRAVIS')|default(false, true) }}"
 
 yaourt_enabled: yes                                 # The role is enabled
 yaourt_sync_deps: no                                # Sync db and base-devel
-yaourt_makepkg_user: makepkg                        # The user to build the packages
-
-
-# Currently Ansible does not support passing list within dicts as arguments
-# therefore this hack is needed
-_sudoers_yaourt_makepkg_user:
-  - name: "{{ yaourt_makepkg_user }}"
-    users: ["ALL"]
-
-_sudoers_yaourt_travis_user:
-  - name: "travis"
-    users: ["ALL"]

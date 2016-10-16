@@ -1,7 +1,7 @@
 # .gitignore
 
 # Submdule
-.travis
+.arch-travis
 
 # Hidden Vagrant-directory
 .vagrant
@@ -15,3 +15,6 @@
 # Ignore role dependencies (installed from Ansible Galaxy)
 roles/
 tests/roles/*.*
+
+# Retry
+test.retry
