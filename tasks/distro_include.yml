@@ -3,12 +3,19 @@
   set_fact:
     travis_env: "{{ lookup('env','TRAVIS') }}"
 
+- name: Set travis_env_bool
+  set_fact:
+    travis_env_bool: "{{ lookup('env','TRAVIS')|default(false, true) }}"
+
 - name: Set travis_home
   set_fact:
     travis_home: "{{ lookup('env','HOME') }}"
 
 - name: travis_env
   debug: "msg={{ travis_env }}"
+
+- name: travis_env_bool
+  debug: "msg={{ travis_env_bool }}"
 
 - name: travis_home
   debug: "msg={{ travis_home }}"
