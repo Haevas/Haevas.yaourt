@@ -32,8 +32,6 @@ arch:
 
     - echo localhost > inventory
     - sudo ansible-galaxy install --force -r requirements.yml
-      #- sudo ansible-galaxy install --force -r requirements.yml -p roles
-      #- sudo ansible-galaxy install --force -r requirements.yml -p ../roles
 
     # Check syntax
     - sudo ansible-playbook --syntax-check -i inventory test.yml
@@ -43,7 +41,7 @@ arch:
 
     # Second run Idempotence test
     - >
-        sudo ansible-playbook -e ansible_python_interpreter=/usr/sbin/python2 -i inventory test.yml --connection=local --sudo
+        sudo ansible-playbook -i inventory test.yml --connection=local --sudo
         | grep -q 'failed=0'
         && (echo 'Idempotence test: pass' && exit 0)
         || (echo 'Idempotence test: fail' && exit 1)
