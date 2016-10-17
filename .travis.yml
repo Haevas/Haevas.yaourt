@@ -52,3 +52,5 @@ arch:
 script:
   - "bash .arch-travis/arch-travis.sh"
 
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/%
