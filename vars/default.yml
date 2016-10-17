@@ -3,14 +3,3 @@ yaourt_makepkg_user: makepkg                        # The user to build the pack
 _sudoers_yaourt_makepkg_user:
   - name: "{{ yaourt_makepkg_user }}"
     users: ["ALL"]
-
-default_test_var: "default_test variable is defined"
-
-
-# Currently Ansible does not support passing list within dicts as arguments
-# therefore this hack is needed
-
-#_sudoers_yaourt_travis_user:
-#  - name: "travis"
-#    users: ["ALL"]
-
