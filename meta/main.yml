@@ -5,10 +5,10 @@ dependencies:
 galaxy_info:
   author: vonpupp
   company: Haevas
-  description: Install yaourt on archlinux based systems
+  description: Install yaourt on Arch Linux based systems
   license: BSD
   platforms:
-  - name: arch
+  - name: Arch Linux
     versions:
     - all
   categories:
