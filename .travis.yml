@@ -1,35 +1,21 @@
+env:
+  global:
+    - ARCH_TRAVIS_CLEAN_CHROOT=1
+
+language: python
 sudo: required
 
-#matrix:
-#  include:
-#    - os: linux
-#      dist: jessie
-
-# env:
-#   - ARCH_TRAVIS_VERBOSE=1
-
 arch:
-  repos:
-    - xyne-any=http://xyne.archlinux.ca/repos/xyne
-#    - papyros=http://dash.papyros.io/repos/$repo/$arch
   packages:
-    - base
-    - reflector
-    # aur
-    #- archey3-git
-    # papyros
-    #- papyros-shell
-    - python2-pip
+    - yaourt
+
   script:
-    #- "sudo archey3"
-    - sudo rm /dev/shm
-    - sudo mkdir /dev/shm
-    - sudo chmod 777 /dev/shm
-    - sudo pip2 install ansible
-    - "reflector --verbose -l 20 --sort rate -p http"
+    - sudo pacman -Syyu --noconfirm
+    - sudo pacman -S --noconfirm python2-pip python2-virtualenv
+    - sudo pacman -S --noconfirm ansible
 
     - echo localhost > inventory
-    - sudo ansible-galaxy install --force -r requirements.yml -p roles
+    - sudo ansible-galaxy install --force -r requirements.yml
 
     # Check syntax
     - sudo ansible-playbook --syntax-check -i inventory test.yml
@@ -48,5 +34,9 @@ arch:
     - yaourt --help || exit 1
 
 script:
-  - "bash .arch-travis/arch-travis.sh"
+  - wget https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh
+  - chmod 755 arch-travis.sh
+  - travis_wait 120 ./arch-travis.sh
 
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/%
